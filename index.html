@@ -1,9 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <title>Calculadora Online</title>
-        <meta charset="utf-8">
-        <link rel="icon" type="image/x-icon" href="img/ico/calculadora.png">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
+
+<head>
+    <title>Calculadora Online</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script  type="text/javascript" src="java/java.js"></script>
+    <link rel="icon" type="image/x-icon" href="img/ico/calculadora.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar bg-dark justify-content-center">
+        <a href="index.html"><b>Calculadora Online</b></a>
+    </nav>
+    <!-- Explanation/Calculator -->
+    <div class="container-fluid-sm" id="center-container">
+        <h1>Calculadora</h1>
+        <div class="row" id="center-row">
+            <div class="col-sm-5" id="column-texto">
+                <p>Descrição da calculadora</p>
+            </div>
+            <div class="col-sm-7" id="column-calculadora">
+                <div class="container-fluid-sm" id="container-calculadora">
+                    <form action="">
+                        <div class="row-sm">
+                            <div class="col-sm">
+                                <h2 id="h-number">Inserir número:</h2>
+                            </div>
+                            <div class="row-sm">
+                                <input class="inserted-number" type="number" id="inserted-number">
+                                <select name="number-type" id="number-type">
+                                    <option value="decimal">Decimal</option>
+                                    <option value="binario">Binário</option>
+                                    <option value="octal">Octal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row-sm">
+                            <div class="col-sm">
+                                <h3 id="h-number1">Resultado:</h3>
+                            </div>
+                            <div class="row-sm">
+                                <input readonly class="recived-value" type="text" id="recived-value">
+                                <select name="number-type" id="number-type">
+                                    <option value="decimal">Decimal</option>
+                                    <option value="binario">Binário</option>
+                                    <option value="octal">Octal</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row-sm">
+                            <div class="col-sm" id="col-buttons">
+                                
+                            </div>
+                        </div>
+                        <input type="button" value="Calcular" onclick="convert_number()">
+                        <button type ="reset" value ="Limpar">Limpar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
