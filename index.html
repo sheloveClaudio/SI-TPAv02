@@ -26,7 +26,7 @@
             </div>
             <div class="col-sm-7" id="column-calculadora">
                 <div class="container-fluid-sm" id="container-calculadora">
-                    <form action="">
+                    <form id="form">
                         <div class="row-sm">
                             <div class="col-sm">
                                 <h2 id="h-number">Inserir número:</h2>
@@ -46,7 +46,7 @@
                             </div>
                             <div class="row-sm">
                                 <input readonly class="recived-value" type="text" id="recived-value">
-                                <select name="number-type" id="number-type">
+                                <select name="number-type" id="result-number-type">
                                     <option value="decimal">Decimal</option>
                                     <option value="binario">Binário</option>
                                     <option value="octal">Octal</option>
@@ -58,8 +58,9 @@
                                 
                             </div>
                         </div>
-                        <input type="button" value="Calcular" onclick="convert_number()">
-                        <button type ="reset" value ="Limpar">Limpar</button>
+                        <button type="button" value="calcular" onclick="convert_number()">Calcular</button>
+                        <button type ="reset" value ="cimpar" onclick="limparp()">Limpar</button>
+                        <p id="conversion-msg"></p>
                     </form>
                 </div>
             </div>

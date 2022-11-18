@@ -39,3 +39,8 @@ nav{
 #col-buttons{
     margin-top: 10px;
 }
+#conversion-msg{
+    margin-top: 15px;
+    font-style: italic;
+    color: rgb(46, 0, 119);
+}
