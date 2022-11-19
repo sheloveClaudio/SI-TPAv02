@@ -11,7 +11,7 @@ function convert_number() {
         document.getElementById("form").reset();
         document.getElementById("conversion-msg").innerHTML = "<b>O número contém mais de 8 bits!</b>";
         }else{
-            // Baixo decinal
+            // Baixo decimal
             if(conv_type_result == "decimal"){
                 numero_convertido.value = numero;
                 document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
@@ -23,8 +23,13 @@ function convert_number() {
             }
             // Baixo octal
             else if(conv_type_result == "octal"){
-                numero_convertido.value = calcular(numero);
+                numero_convertido.value = calculodecimaloct(numero);
                 document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";    
+            }
+            // Baixo hexadecimal
+            else if(conv_type_result == "hexa"){
+                numero_convertido.value = calculodecimalhex(numero);
+                document.getElementById("conversation-msg").innerHTML = "<b>Conversão feita!</b>"
             }      
         }
         // Caixa vazia
@@ -37,14 +42,33 @@ function convert_number() {
     else if(conv_type == "binario"){
         if(numero > 11111111){
             document.getElementById("form").reset();
-        document.getElementById("conversion-msg").innerHTML = "<b>O número contém mais de 8 bits!</b>";
+            document.getElementById("conversion-msg").innerHTML = "<b>O número contém mais de 8 bits!</b>";
         }
-        else if(verify(numero) == false){
+        else if(verify(numero) == 0){
             document.getElementById("form").reset();
             document.getElementById("conversion-msg").innerHTML = "<b>O número não é valido!</b>";
         }
         else{
-
+            // Baixo decimal
+            if(conv_type_result == "decimal"){
+                numero_convertido.value = calculobinariodec(numero);
+                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
+            }
+            // Baixo binário
+            else if(conv_type_result == "binario"){
+                numero_convertido.value = calculodecimalbin(numero);
+                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";    
+            }
+            // Baixo octal
+            else if(conv_type_result == "octal"){
+                numero_convertido.value = calculodecimaloct(numero);
+                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";    
+            }
+            // Baixo hexadecimal
+            else if(conv_type_result == "hexa"){
+                numero_convertido.value = calculodecimalhex(numero);
+                document.getElementById("conversation-msg").innerHTML = "<b>Conversão feita!</b>"
+            }
         }
     }
 // Cima octal
@@ -57,8 +81,8 @@ function convert_number() {
 
 function verify(num){
     // Analisa cada alg 1 a 1 para ver se é maior que 1 ou não
-    while (num != 0) {
-        if (num % 10 > 1) {
+    while(num != 0){      
+        if(parseInt(num % 10) > 1){
             return false;
         }
         num = num / 10;
@@ -66,10 +90,27 @@ function verify(num){
     return true;
 }
 
-// Calculo
+// Calculo Decimal --> Outros
 
 function calculodecimalbin(a){
-    const fim = a.toString(3);
+    const fim = a.toString(2);
+    return(fim);
+}
+
+function calculodecimaloct(a){
+    const fim = a.toString(8);
+    return(fim);
+}
+
+function calculodecimalhex(a){
+    const fim = a.toString(16).toUpperCase();
+    return(fim);
+}
+
+// Calculo Binario --> Outros
+
+function calculobinariodec(a){
+    var fim = parseInt(a, 2);
     return(fim);
 }
 
