@@ -1,20 +1,40 @@
 function convert_number() {
-    var numero = document.getElementById("inserted-number").value;
+    var numero = parseInt(document.getElementById("inserted-number").value);
+    var numero_convertido = document.getElementById("received-value");
     var conv_type = document.getElementById("number-type").value;
+    var conv_type_result = document.getElementById("received-number-type").value;   
     
+    // Cima decimal
     if(conv_type == "decimal"){
+        // Mais de 8 bits
         if (numero > 255 || numero < -128) {
         document.getElementById("form").reset();
         document.getElementById("conversion-msg").innerHTML = "<b>O número contém mais de 8 bits!</b>";
         }else{
-            document.getElementById("recived-value").value = calcular(numero);
-            document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
+            // Baixo decinal
+            if(conv_type_result == "decimal"){
+                numero_convertido.value = numero;
+                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
+            }
+            // Baixo binário
+            else if(conv_type_result == "binario"){
+                numero_convertido.value = calculodecimalbin(numero);
+                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";    
+            }
+            // Baixo octal
+            else if(conv_type_result == "octal"){
+                numero_convertido.value = calcular(numero);
+                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";    
+            }      
         }
+        // Caixa vazia
         if (numero == 0) {
             document.getElementById("form").reset();
             document.getElementById("conversion-msg").innerHTML = "<b>Nenhum número inserido!</b>";
             }
-    }else if(conv_type == "binario"){
+    }
+// Cima binário
+    else if(conv_type == "binario"){
         if(numero > 11111111){
             document.getElementById("form").reset();
         document.getElementById("conversion-msg").innerHTML = "<b>O número contém mais de 8 bits!</b>";
@@ -26,17 +46,18 @@ function convert_number() {
         else{
 
         }
-    }else if(conv_type == "octal"){
+    }
+// Cima octal
+    else if(conv_type == "octal"){
 
     }
 }
 
+// Verificação Binal
 
 function verify(num){
+    // Analisa cada alg 1 a 1 para ver se é maior que 1 ou não
     while (num != 0) {
-
-        // If the digit is greater
-        // than 1 return false
         if (num % 10 > 1) {
             return false;
         }
@@ -45,11 +66,15 @@ function verify(num){
     return true;
 }
 
-function calcular(a){
-    const num = a;
-    let x = a + 1;
-    return(x);
+// Calculo
+
+function calculodecimalbin(a){
+    const fim = a.toString(3);
+    return(fim);
 }
+
+// Limpar texto 
+
 function limparp(){
     document.getElementById("conversion-msg").innerHTML = "";
 }
