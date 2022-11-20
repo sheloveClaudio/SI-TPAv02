@@ -28,14 +28,14 @@
             </div>
             <div class="col-sm-7" id="column-calculadora">
                 <div class="container-fluid-sm" id="container-calculadora">
-                    <form id="form">
+                    <form id="form" .change>
                         <div class="row-sm">
                             <div class="col-sm">
                                 <h2 id="h-number">Inserir número:</h2>
                             </div>
                             <div class="row-sm">
                                 <input class="inserted-number" type="number" id="inserted-number">
-                                <select name="number-type" id="number-type">
+                                <select name="number-type" id="number-type" onchange="funcaodinamica()">
                                     <option value="decimal">Decimal</option>
                                     <option value="binario">Binário</option>
                                     <option value="octal">Octal</option>
