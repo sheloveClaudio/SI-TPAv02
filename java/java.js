@@ -4,6 +4,10 @@
     var conv_type = document.getElementById("number-type").value;
     var conv_type_result = document.getElementById("received-number-type").value;   
 
+
+
+
+
 //    
 // Cima decimal
 //
@@ -13,6 +17,9 @@
 
     if(conv_type == "decimal"){
         // Mais de 8 bits
+        if(numero < 0){
+            numero = 256 - Math.abs(numero);
+        }
         if (numero > 255 || numero < -128) {
         document.getElementById("form").reset();
         document.getElementById("conversion-msg").innerHTML = "<b>O número contém mais de 8 bits!</b>";
@@ -57,7 +64,7 @@
 
 
     else if(conv_type == "binario"){
-        if(numero > 11111111){
+        if(numero > 11111111 || numero < 0){
             document.getElementById("form").reset();
             document.getElementById("conversion-msg").innerHTML = "<b>O número contém mais de 8 bits!</b>";
         }
@@ -68,7 +75,11 @@
         else{
             // Baixo decimal
             if(conv_type_result == "decimal"){
+                if(document.getElementById("negativo").checked == true){
+                    numero_convertido.value = -256 + calculobinariodec(numero);
+                }else{
                 numero_convertido.value = calculobinariodec(numero);
+                }
                 document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
             }
             // Baixo binário
@@ -273,14 +284,22 @@ function limparp(){
     document.getElementById("conversion-msg").innerHTML = "";
 }
 
+
+
 function funcaodinamica(){
     var conv_type = document.getElementById("number-type").value;
 
     if(conv_type == "hexa"){
         document.getElementById("inserted-number").type = "text";
     }else document.getElementById("inserted-number").type = "number";
-}
 
-//if(conv_type == "hexa"){
-  //  document.getElementById('inserted-number').type = 'text';
-//}else document.getElementById('inserted-number').type = 'number';
+    if(conv_type == "binario"){
+        if(conv_type_result == "decimal"){
+            document.getElementById("negativo").style.display = "inline"
+            document.getElementById("labelnegativo").style.display = "inline" 
+        }else{
+            document.getElementById("negativo").hidden();
+            document.getElementById("labelnegativo").style.display = "none" 
+        }
+    }
+}

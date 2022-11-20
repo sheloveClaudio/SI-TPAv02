@@ -34,7 +34,7 @@
                                 <h2 id="h-number">Inserir número:</h2>
                             </div>
                             <div class="row-sm">
-                                <input class="inserted-number" type="number" id="inserted-number">
+                                <input class="inserted-number" autocomplete="off" type="number" id="inserted-number">
                                 <select name="number-type" id="number-type" onchange="funcaodinamica()">
                                     <option value="decimal">Decimal</option>
                                     <option value="binario">Binário</option>
@@ -45,7 +45,7 @@
                         </div>
                         <div class="row-sm">
                             <div class="col-sm">
-                                <h3 id="h-number1">Resultado:</h3>
+                                <h3 id="h-number1">Resultado: <input type="checkbox" hidden id="negativo"><label id="labelnegativo" for="negativo" hidden style="font-size: 10px;">Receber em negativo?</label></h3> 
                             </div>
                             <div class="row-sm">
                                 <input readonly class="received-value" type="text" id="received-value">

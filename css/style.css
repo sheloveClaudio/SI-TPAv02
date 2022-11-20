@@ -26,6 +26,12 @@ nav{
     margin-top: 10px;
     margin-bottom: 15px;
 }
+#inserted-number{
+    text-align: center;
+}
+#received-value{
+    text-align: center;
+}
 #h-number{
     font-size: 25px;
     margin-right: 100px;
@@ -43,4 +49,15 @@ nav{
     margin-top: 15px;
     font-style: italic;
     color: rgb(46, 0, 119);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
 }
