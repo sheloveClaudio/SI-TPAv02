@@ -12,19 +12,53 @@
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 
+
+<header class="container-fluid p-2 sticky-top">
+
+<nav class="container navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container-fluid">
+      <div>
+            <div class="container text-center">
+              <a class="navbar-brand" href="index.html"> <img id="nav_icon" src="img/ico/calculadora.png" height="60px" width="auto" alt="ico"> </a> <!--Quero por um icon-->
+            </div>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Calculadora</a>
+            </li> 
+
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="descricao.html">Descrição</a>
+              </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="support.html">Support</a>
+            </li>
+
+            <li class="nav-item-grey">
+                <a class="nav-link disabled">Made by: Cláudio, Tiago e Gonçalo</a>
+            </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+</header>
+
+
+<!---------------------- BODY ---------------------->
 <body>
-    <!-- Navbar -->
-    <nav class="navbar bg-dark justify-content-center">
-        <a href="index.html"><b>Calculadora Online</b></a>
-    </nav>
-    <!-- Explanation/Calculator -->
-    <div class="container-fluid-sm" id="center-container">
-        <h1>Calculadora</h1>
+
+    <div class="container" >
+          <main class="content" id="maincontainer">
+            <h1></h1>
         <div class="row" id="center-row">
             <div class="col-sm-5" id="column-texto">
-                <p>Descrição da calculadora
-                    é o brokitas
-                </p>
+                <!-- coisas -->
             </div>
             <div class="col-sm-7" id="column-calculadora">
                 <div class="container-fluid-sm" id="container-calculadora">
@@ -34,42 +68,42 @@
                                 <h2 id="h-number">Inserir número:</h2>
                             </div>
                             <div class="row-sm">
-                                <input class="inserted-number" autocomplete="off" type="number" id="inserted-number">
-                                <select name="number-type" id="number-type" onchange="funcaodinamica()">
-                                    <option value="decimal">Decimal</option>
-                                    <option value="binario">Binário</option>
-                                    <option value="octal">Octal</option>
-                                    <option value="hexa">Hexa</option>
+                                <input class="inserted-number" type="number" id="inserted-number" autocomplete="off">
+                                <select class="select_box" name="number-type" id="number-type" onchange="checkbox()" onchange="funcaodinamica()">
+                                    <option id="option_type" value="decimal">Decimal</option>
+                                    <option id="option_type" value="binario">Binário</option>
+                                    <option id="option_type" value="octal">Octal</option>
+                                    <option id="option_type" value="hexa">Hexa</option>
                                 </select>
-                            </div>
+                            </div>                       
                         </div>
                         <div class="row-sm">
                             <div class="col-sm">
-                                <h3 id="h-number1">Resultado: <input type="checkbox" hidden id="negativo"><label id="labelnegativo" for="negativo" hidden style="font-size: 10px;">Receber em negativo?</label></h3> 
+                                <h3 id="h-number1">Resultado: <input type="checkbox" id="negativo" style="display: none;"><label id="labelnegativo" for="negativo"  style="font-size: 10px;display: none;">Decimal negativo?</label></h3>
                             </div>
                             <div class="row-sm">
                                 <input readonly class="received-value" type="text" id="received-value">
-                                <select name="number-type" id="received-number-type">
-                                    <option value="decimal">Decimal</option>
-                                    <option value="binario">Binário</option>
-                                    <option value="octal">Octal</option>
-                                    <option value="hexa">Hexa</option>
+                                <select class="select_box" name="number-type" id="received-number-type" onchange="checkbox()">
+                                    <option id="option_type" value="decimal">Decimal</option>
+                                    <option id="option_type" value="binario">Binário</option>
+                                    <option id="option_type" value="octal">Octal</option>
+                                    <option id="option_type" value="hexa">Hexa</option>
                                 </select>
                             </div>
                         </div>
                         <div class="row-sm">
                             <div class="col-sm" id="col-buttons">
-                                
+
                             </div>
                         </div>
-                        <button type="button" value="calcular" onclick="convert_number()">Calcular</button>
-                        <button type ="reset" value ="cimpar" onclick="limparp()">Limpar</button>
+                        <br>
+                        <button id="button_calcular" type="button" value="calcular" onclick="convert_number()"><b>Calcular</b></button>
+                        <button id="button_limpar" type ="reset" value ="cimpar" onclick="limparp(); clean();"><b>Limpar</b></button>
                         <p id="conversion-msg"></p>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>

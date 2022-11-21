@@ -1,305 +1,320 @@
-    function convert_number() {
+function convert_number() {
     var numero = parseInt(document.getElementById("inserted-number").value);
     var numero_convertido = document.getElementById("received-value");
     var conv_type = document.getElementById("number-type").value;
-    var conv_type_result = document.getElementById("received-number-type").value;   
+    var conv_type_result = document.getElementById("received-number-type").value;
 
+    if(document.getElementById("inserted-number").value.length == 0){
+        document.getElementById("conversion-msg").innerHTML = "<b>Nenhum valor introduzido";
+        document.getElementsById("form").reset();
+    }
 
+    //    
+    // Cima decimal
+    //
 
-
-
-//    
-// Cima decimal
-//
-
-
-
-
-    if(conv_type == "decimal"){
+    if (conv_type == "decimal") {
         // Mais de 8 bits
-        if(numero < 0){
-            numero = 256 - Math.abs(numero);
-        }
         if (numero > 255 || numero < -128) {
-        document.getElementById("form").reset();
-        document.getElementById("conversion-msg").innerHTML = "<b>O número contém mais de 8 bits!</b>";
+            document.getElementById("form").reset();
+            document.getElementById("conversion-msg").innerHTML = "<b>O número contém mais de 8 bits!</b>";
+
         }
-        
-        else{
+        else {
             // Baixo decimal
-            if(conv_type_result == "decimal"){
+            if (conv_type_result == "decimal") {
                 numero_convertido.value = numero;
                 document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
             }
             // Baixo binário
-            else if(conv_type_result == "binario"){
-                numero_convertido.value = calculodecimalbin(numero);
-                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";    
+            else if (conv_type_result == "binario") {
+                if(document.getElementById("negativo").checked == true){
+                    if(numero > 0){
+                        document.getElementById("conversion-msg").innerHTML = "<b>Não é decimal negativo!</b>";
+                        document.getElementById("form").reset();
+                    }
+                    else{
+                        numero = 256 - Math.abs(numero);
+                        numero_convertido.value = calculodecimalbin(numero);
+                        document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
+                    }
+                } 
+                else{
+                    if(numero < 0){
+                        document.getElementById("conversion-msg").innerHTML = "<b>Não é decimal positivo!</b>";
+                        document.getElementById("form").reset();
+                    }else{
+                        numero_convertido.value = calculodecimalbin(numero);
+                        document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
+                    }
+                         
+                }
             }
             // Baixo octal
-            else if(conv_type_result == "octal"){
+            else if (conv_type_result == "octal") {
                 numero_convertido.value = calculodecimaloct(numero);
-                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";    
+                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
             }
             // Baixo hexadecimal
-            else if(conv_type_result == "hexa"){
+            else if (conv_type_result == "hexa") {
                 numero_convertido.value = calculodecimalhex(numero);
                 document.getElementById("conversation-msg").innerHTML = "<b>Conversão feita!</b>"
-            }      
-        }
-        if (numero == 0 || document.getElementById("inserted-number").value == "") {
-            document.getElementById("form").reset();
-            document.getElementById("conversion-msg").innerHTML = "<b>Nenhum número inserido!</b>";
             }
+        }
     }
 
 
 
 
-//
-// Cima binário
-//
+    //
+    // Cima binário
+    //
 
 
 
 
-    else if(conv_type == "binario"){
-        if(numero > 11111111 || numero < 0){
+    else if (conv_type == "binario") {
+        if (numero < 0) {
+            document.getElementById("form").reset();
+            document.getElementById("conversion-msg").innerHTML = "<b>wefwefwef</b>"
+        }
+        if (numero > 11111111) {
             document.getElementById("form").reset();
             document.getElementById("conversion-msg").innerHTML = "<b>O número contém mais de 8 bits!</b>";
         }
-        else if(verify(numero) == false){
+        else if (verify(numero) == false) {
             document.getElementById("form").reset();
             document.getElementById("conversion-msg").innerHTML = "<b>O número não é valido!</b>";
         }
-        else{
+        
+        else {
             // Baixo decimal
-            if(conv_type_result == "decimal"){
-                if(document.getElementById("negativo").checked == true){
-                    numero_convertido.value = -256 + calculobinariodec(numero);
-                }else{
+            if (conv_type_result == "decimal") {
                 numero_convertido.value = calculobinariodec(numero);
-                }
                 document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
             }
             // Baixo binário
-            else if(conv_type_result == "binario"){
+            else if (conv_type_result == "binario") {
                 numero_convertido.value = numero;
-                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";    
+                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
             }
             // Baixo octal
-            else if(conv_type_result == "octal"){
+            else if (conv_type_result == "octal") {
                 numero_convertido.value = calculobinariooct(numero);
-                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";    
+                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
             }
             // Baixo hexadecimal
-            else if(conv_type_result == "hexa"){
+            else if (conv_type_result == "hexa") {
                 numero_convertido.value = calculobinariohex(numero);
                 document.getElementById("conversation-msg").innerHTML = "<b>Conversão feita!</b>"
             }
         }
-        if (numero == 0 || document.getElementById("inserted-number").value == "") {
-            document.getElementById("form").reset();
-            document.getElementById("conversion-msg").innerHTML = "<b>Nenhum número inserido!</b>";
-            }
     }
 
 
 
 
-//
-// Cima octal
-//
+    //
+    // Cima octal
+    //
 
 
 
 
-    else if(conv_type == "octal"){
-        if(numero > 377){
+    else if (conv_type == "octal") {
+        if (numero > 377) {
             document.getElementById("form").reset();
             document.getElementById("conversion-msg").innerHTML = "<b>O número contém mais de 8 bits!</b>";
         }
-        else{
+        else {
             // Baixo decimal
-            if(conv_type_result == "decimal"){
+            if (conv_type_result == "decimal") {
                 numero_convertido.value = calculooctaldec(numero);
                 document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
             }
             // Baixo binário
-            else if(conv_type_result == "binario"){
+            else if (conv_type_result == "binario") {
                 numero_convertido.value = calculooctalbin(numero);
-                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";    
+                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
             }
             // Baixo octal
-            else if(conv_type_result == "octal"){
+            else if (conv_type_result == "octal") {
                 numero_convertido.value = numero;
-                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";    
+                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
             }
             // Baixo hexadecimal
-            else if(conv_type_result == "hexa"){
+            else if (conv_type_result == "hexa") {
                 numero_convertido.value = calculooctalhex(numero);
                 document.getElementById("conversation-msg").innerHTML = "<b>Conversão feita!</b>"
             }
         }
-        if (numero == 0 || document.getElementById("inserted-number").value == "") {
-            document.getElementById("form").reset();
-            document.getElementById("conversion-msg").innerHTML = "<b>Nenhum número inserido!</b>";
-            }
     }
 
- 
-    
-
-//
-// Cima Hexadecimal
-//
 
 
 
+    //
+    // Cima Hexadecimal
+    //
 
-            else if(conv_type == "hexa"){
-                if(numero > 377){
-                    document.getElementById("form").reset();
-                    document.getElementById("conversion-msg").innerHTML = "<b>O número contém mais de 8 bits!</b>";
-                }
-                else{
-                    // Baixo decimal
-                    if(conv_type_result == "decimal"){
-                        numero_convertido.value = calculohexadecimaldec(document.getElementById("inserted-number").value);
-                        document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
-                    }
-                    // Baixo binário
-                    else if(conv_type_result == "binario"){
-                        numero_convertido.value = calculohexadecimalbin(document.getElementById("inserted-number").value);
-                        document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";    
-                    }
-                    // Baixo octal
-                    else if(conv_type_result == "octal"){
-                        numero_convertido.value = calculohexadecimaloct(document.getElementById("inserted-number").value);
-                        document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";    
-                    }
-                    // Baixo hexadecimal
-                    else if(conv_type_result == "hexa"){
-                        numero_convertido.value = document.getElementById("inserted-number").value;
-                        document.getElementById("conversation-msg").innerHTML = "<b>Conversão feita!</b>"
-                    }
-                }
-                if (numero == 0 || document.getElementById("inserted-number").value == "") {
-                    document.getElementById("form").reset();
-                    document.getElementById("conversion-msg").innerHTML = "<b>Nenhum número inserido!</b>";
-                    }
+
+
+
+    else if (conv_type == "hexa") {
+        if (numero > 377) {
+            document.getElementById("form").reset();
+            document.getElementById("conversion-msg").innerHTML = "<b>O número contém mais de 8 bits!</b>";
+        }
+        else {
+            // Baixo decimal
+            if (conv_type_result == "decimal") {
+                numero_convertido.value = calculohexadecimaldec(document.getElementById("inserted-number").value);
+                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
             }
+            // Baixo binário
+            else if (conv_type_result == "binario") {
+                numero_convertido.value = calculohexadecimalbin(document.getElementById("inserted-number").value);
+                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
+            }
+            // Baixo octal
+            else if (conv_type_result == "octal") {
+                numero_convertido.value = calculohexadecimaloct(document.getElementById("inserted-number").value);
+                document.getElementById("conversion-msg").innerHTML = "<b>Conversão feita!</b>";
+            }
+            // Baixo hexadecimal
+            else if (conv_type_result == "hexa") {
+                numero_convertido.value = document.getElementById("inserted-number").value;
+                document.getElementById("conversation-msg").innerHTML = "<b>Conversão feita!</b>"
+            }
+        }
+
+    }
 }
 
 // Verificação Binal
 
-function verify(num){
+function verify(num) {
     // Analisa cada alg 1 a 1 para ver se é maior que 1 ou não
     let c = 0;
     let v = 0;
-    while(num != 0){      
-        if(parseInt(num % 10) == 1 || parseInt(num % 10) == 0){
-            c = c+1;
-            v = v+1;  
+    while (num != 0) {
+        if (parseInt(num % 10) == 1 || parseInt(num % 10) == 0) {
+            c = c + 1;
+            v = v + 1;
+        }
+        num = num / 10;
+        if (c == v) {
+            return true;
+        } else return false;
     }
-    num = num / 10;
-    if(c==v){
-        return true;
-    }else return false;
-}
 }
 
 // Calculo Decimal --> Outros
 
-function calculodecimalbin(a){
+function calculodecimalbin(a) {
     const fim = a.toString(2);
-    return(fim);
+    return (fim);
 }
 
-function calculodecimaloct(a){
+function calculodecimaloct(a) {
     const fim = a.toString(8);
-    return(fim);
+    return (fim);
 }
 
-function calculodecimalhex(a){
+function calculodecimalhex(a) {
     const fim = a.toString(16).toUpperCase();
-    return(fim);
+    return (fim);
 }
 
 // Calculo Binario --> Outros
 
-function calculobinariodec(a){
+function calculobinariodec(a) {
     const fim = parseInt(a, 2);
-    return(fim);
+    return (fim);
 }
 
-function calculobinariooct(a){
-    const fim = parseInt(a,2).toString(8);
-    
-    return(fim);
+function calculobinariooct(a) {
+    const fim = parseInt(a, 2).toString(8);
+
+    return (fim);
 }
 
-function calculobinariohex(a){
-    const fim = parseInt(a,2).toString(16).toUpperCase();
-    return(fim);
+function calculobinariohex(a) {
+    const fim = parseInt(a, 2).toString(16).toUpperCase();
+    return (fim);
 }
 
 // Calculo Octal --> Outros
 
-function calculooctaldec(a){
-    const fim = parseInt(a,8);
-    return(fim);
+function calculooctaldec(a) {
+    const fim = parseInt(a, 8);
+    return (fim);
 }
 
-function calculooctalbin(a){
-    const fim = parseInt(a,8).toString(2);
-    return(fim);
+function calculooctalbin(a) {
+    const fim = parseInt(a, 8).toString(2);
+    return (fim);
 }
 
-function calculooctalhex(a){
-    const fim = parseInt(a,8).toString(16).toUpperCase();
-    return(fim);
+function calculooctalhex(a) {
+    const fim = parseInt(a, 8).toString(16).toUpperCase();
+    return (fim);
 }
 
 // Calculo Hexa --> Outros
 
-function calculohexadecimaldec(a){
-    var fim = parseInt(a,16);
-    return(fim);
+function calculohexadecimaldec(a) {
+    var fim = parseInt(a, 16);
+    return (fim);
 }
 
-function calculohexadecimalbin(a){
-    var fim = parseInt(a,16).toString(2);
-    return(fim);
+function calculohexadecimalbin(a) {
+    var fim = parseInt(a, 16).toString(2);
+    return (fim);
 }
 
-function calculohexadecimaloct(a){
-    var fim = parseInt(a,16).toString(8);
+function calculohexadecimaloct(a) {
+    var fim = parseInt(a, 16).toString(8);
 
 }
 
 // Limpar texto 
 
-function limparp(){
+function limparp() {
     document.getElementById("conversion-msg").innerHTML = "";
 }
 
 
-
-function funcaodinamica(){
+function funcaodinamica() {
     var conv_type = document.getElementById("number-type").value;
+    var conv_type_result = document.getElementById("received-number-type").value;
 
-    if(conv_type == "hexa"){
+    if (conv_type == "hexa") {
         document.getElementById("inserted-number").type = "text";
-    }else document.getElementById("inserted-number").type = "number";
+    } else document.getElementById("inserted-number").type = "number";
+}
 
-    if(conv_type == "binario"){
-        if(conv_type_result == "decimal"){
-            document.getElementById("negativo").style.display = "inline"
-            document.getElementById("labelnegativo").style.display = "inline" 
+// Button negative
+
+function checkbox(){
+    var conv_type = document.getElementById("number-type").value;
+    var conv_type_result = document.getElementById("received-number-type").value;
+
+    if(conv_type == "decimal"){
+        if(conv_type_result == "binario"){
+            document.getElementById("negativo").style.display = "block"
+            document.getElementById("labelnegativo").style.display = "block"
         }else{
-            document.getElementById("negativo").hidden();
-            document.getElementById("labelnegativo").style.display = "none" 
+            document.getElementById("negativo").style.display = "none"
+            document.getElementById("labelnegativo").style.display = "none"
         }
     }
+    else{
+        document.getElementById("negativo").style.display = "none"
+        document.getElementById("labelnegativo").style.display = "none"
+    }
 }
+    function clean(){
+        document.getElementById("negativo").style.display = "none"
+        document.getElementById("labelnegativo").style.display = "none"
+    }
