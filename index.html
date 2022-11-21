@@ -59,27 +59,29 @@
         <div class="row" id="center-row">
             <div class="col-sm-5" id="column-texto">
                 <!-- coisas -->
+                
             </div>
             <div class="col-sm-7" id="column-calculadora">
                 <div class="container-fluid-sm" id="container-calculadora">
-                    <form id="form" .change>
+                    <form id="form">
                         <div class="row-sm">
                             <div class="col-sm">
                                 <h2 id="h-number">Inserir número:</h2>
                             </div>
                             <div class="row-sm">
                                 <input class="inserted-number" type="number" id="inserted-number" autocomplete="off">
-                                <select class="select_box" name="number-type" id="number-type" onchange="checkbox()" onchange="funcaodinamica()">
+                                <select class="select_box" name="number-type" id="number-type" onchange="funcaodinamica();checkbox();">
                                     <option id="option_type" value="decimal">Decimal</option>
                                     <option id="option_type" value="binario">Binário</option>
                                     <option id="option_type" value="octal">Octal</option>
                                     <option id="option_type" value="hexa">Hexa</option>
                                 </select>
+                                <br><input type="checkbox" id="negativo" style="display: none;"><label id="labelnegativo" for="negativo"  style="font-size: 13px;display: none; margin-left: 10px;">Decimal negativo?</label>
                             </div>                       
                         </div>
                         <div class="row-sm">
                             <div class="col-sm">
-                                <h3 id="h-number1">Resultado: <input type="checkbox" id="negativo" style="display: none;"><label id="labelnegativo" for="negativo"  style="font-size: 10px;display: none;">Decimal negativo?</label></h3>
+                                <h3 id="h-number1">Resultado: </h3>
                             </div>
                             <div class="row-sm">
                                 <input readonly class="received-value" type="text" id="received-value">
@@ -98,7 +100,7 @@
                         </div>
                         <br>
                         <button id="button_calcular" type="button" value="calcular" onclick="convert_number()"><b>Calcular</b></button>
-                        <button id="button_limpar" type ="reset" value ="cimpar" onclick="limparp(); clean();"><b>Limpar</b></button>
+                        <button id="button_limpar" type ="reset" value ="cimpar" onclick="limparp(); clean()"><b>Limpar</b></button>
                         <p id="conversion-msg"></p>
                     </form>
                 </div>
