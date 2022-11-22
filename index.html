@@ -5,7 +5,7 @@
     <title>Calculadora Online</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script  type="text/javascript" src="java/java.js"></script>
+    <script type="text/javascript" src="java/java.js"></script>
     <link rel="icon" type="image/x-icon" href="img/ico/calculadora.png">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -13,99 +13,137 @@
 </head>
 
 
-<header class="container-fluid p-2 sticky-top">
-
-<nav class="container navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container-fluid">
-      <div>
-            <div class="container text-center">
-              <a class="navbar-brand" href="index.html"> <img id="nav_icon" src="img/ico/calculadora.png" height="60px" width="auto" alt="ico"> </a> <!--Quero por um icon-->
-            </div>
-      </div>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="index.html">Calculadora</a>
-            </li> 
-
-            <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="descricao.html">Descrição</a>
-              </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="support.html">Support</a>
-            </li>
-
-            <li class="nav-item-grey">
-                <a class="nav-link disabled">Made by: Cláudio, Tiago e Gonçalo</a>
-            </li>
-        </ul>
-      </div>
-
-    </div>
-  </nav>
-
-</header>
-
 
 <!---------------------- BODY ---------------------->
+
 <body>
 
-    <div class="container" >
-          <main class="content" id="maincontainer">
-            <h1></h1>
-        <div class="row" id="center-row">
-            <div class="col-sm-5" id="column-texto">
-                <!-- coisas -->
-                
-            </div>
-            <div class="col-sm-7" id="column-calculadora">
-                <div class="container-fluid-sm" id="container-calculadora">
-                    <form id="form">
-                        <div class="row-sm">
-                            <div class="col-sm">
-                                <h2 id="h-number">Inserir número:</h2>
-                            </div>
-                            <div class="row-sm">
-                                <input class="inserted-number" type="number" id="inserted-number" autocomplete="off">
-                                <select class="select_box" name="number-type" id="number-type" onchange="funcaodinamica();checkbox();">
-                                    <option id="option_type" value="decimal">Decimal</option>
-                                    <option id="option_type" value="binario">Binário</option>
-                                    <option id="option_type" value="octal">Octal</option>
-                                    <option id="option_type" value="hexa">Hexa</option>
-                                </select>
-                                <br><input type="checkbox" id="negativo" style="display: none;"><label id="labelnegativo" for="negativo"  style="font-size: 13px;display: none; margin-left: 10px;">Decimal negativo?</label>
-                            </div>                       
-                        </div>
-                        <div class="row-sm">
-                            <div class="col-sm">
-                                <h3 id="h-number1">Resultado: </h3>
-                            </div>
-                            <div class="row-sm">
-                                <input readonly class="received-value" type="text" id="received-value">
-                                <select class="select_box" name="number-type" id="received-number-type" onchange="checkbox()">
-                                    <option id="option_type" value="decimal">Decimal</option>
-                                    <option id="option_type" value="binario">Binário</option>
-                                    <option id="option_type" value="octal">Octal</option>
-                                    <option id="option_type" value="hexa">Hexa</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row-sm">
-                            <div class="col-sm" id="col-buttons">
-
-                            </div>
-                        </div>
-                        <br>
-                        <button id="button_calcular" type="button" value="calcular" onclick="convert_number()"><b>Calcular</b></button>
-                        <button id="button_limpar" type ="reset" value ="cimpar" onclick="limparp(); clean()"><b>Limpar</b></button>
-                        <p id="conversion-msg"></p>
-                    </form>
+    <nav class="container-fluid navbar navbar-expand-lg navbar-dark" id="navbar">
+        <div class="container-fluid" id="navbar-content">
+            <div>
+                <div class="container text-center">
+                    <a class="navbar-brand" href="index.html"> <img id="nav_icon" src="img/ico/calculadora.png"
+                            height="60px" width="auto" alt="ico"> </a>
+                    <!--Quero por um icon-->
                 </div>
             </div>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav  mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Calculadora</a>
+                    </li>
+                </ul>
+            </div>
+
         </div>
+    </nav>
+
+    <div class="container">
+        <main class="content" id="maincontainer">
+            <h1></h1>
+            <div class="row" id="center-row">
+                <div class="col-sm-5" id="column-texto">
+                    <!-- coisas -->
+                    <p>
+                        ➔ Calculadora online grátis que o permite o cálculo de <b>binários negativos</b> e a
+                        <b>conversão de bases numéricas</b> tais como: <br>
+                        - <a
+                            href="http://marco.uminho.pt/~joao/Computacao2/node4.html#SECTION00220000000000000000"><b>Decimal</b></a><br>
+                        - <b>Binária</b> <br>
+                        - <b>Octal</b> <br>
+                        - <b>Hexadecimal </b>
+                    </p>
+                    <p>
+                        ➔ É de <b><span style="color: red;">realçar</span></b> que o utilizador deverá <b><span
+                                style="color: red;">introduzir um valor com um máximo de oito bits</span></b>.
+                    </p>
+                    <p>
+
+                        ➔ <b>Sistema Decimal</b> - O sistema Decimal é o sistema mais utilizado pelos seres humanos.
+                        <br>
+
+                        ➔ <b>Sistema binário</b> - É o sistema mais utilizado por máquinas. O sistema binário utiliza os
+                        símbolos: 0, 1. <br>
+
+                        ➔ <b>Sistema octal</b> - É um sistema de numeração de base 8, ou seja, recorre a 8 símbolos
+                        (0,1,2,3,4,5,6,7). <br>
+
+                        ➔ <b>Sistema Hexadecimal</b> - É muito utilizado na programação de microprocessadores. <br>
+
+                    </p>
+                </div>
+                <div class="col-sm-7" id="column-calculadora">
+                    <div class="container-fluid-sm" id="container-calculadora">
+                        <form id="form">
+                            <div class="row-sm">
+                                <div class="col-sm">
+                                    <h2 id="h-number">Inserir número:</h2>
+                                </div>
+                                <div class="row-sm">
+                                    <input class="inserted-number" type="number" id="inserted-number"
+                                        autocomplete="off">
+                                    <select class="select_box" name="number-type" id="number-type"
+                                        onchange="funcaodinamica();checkbox();">
+                                        <option value="decimal">Decimal</option>
+                                        <option value="binario">Binário</option>
+                                        <option value="octal">Octal</option>
+                                        <option value="hexa">Hexa</option>
+                                    </select>
+                                    <br><input type="checkbox" id="negativo" style="display: none;"><label
+                                        id="labelnegativo" for="negativo"
+                                        style="font-size: 13px;display: none; margin-left: 10px;">Decimal
+                                        negativo?</label>
+                                </div>
+                            </div>
+                            <div class="row-sm">
+                                <div class="col-sm">
+                                    <h3 id="h-number1">Resultado: </h3>
+                                </div>
+                                <div class="row-sm">
+                                    <input readonly class="received-value" type="text" id="received-value">
+                                    <select class="select_box" name="number-type" id="received-number-type"
+                                        onchange="checkbox()">
+                                        <option value="decimal">Decimal</option>
+                                        <option value="binario">Binário</option>
+                                        <option value="octal">Octal</option>
+                                        <option value="hexa">Hexa</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row-sm">
+                                <div class="col-sm" id="col-buttons">
+
+                                </div>
+                            </div>
+                            <br>
+                            <button id="button_calcular" type="button" value="calcular"
+                                onclick="convert_number()"><b>Calcular</b></button>
+                            <button id="button_limpar" type="reset" value="cimpar"
+                                onclick="limparp(); clean()"><b>Limpar</b></button>
+                            <p id="conversion-msg"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="container" id="container-git">
+        <h4>Cona</h4>
+        <div class="row">
+            <div class="col-4" id="col-cla">
+                <img src="img/98917366.jfif" alt="imgGit">
+            </div>
+            <div class="col-4">
+               ddd 
+            </div>
+            <div class="col-4">
+                ddd
+            </div>
+        </div>
+    </div>
+
+
 </body>
 
 </html>

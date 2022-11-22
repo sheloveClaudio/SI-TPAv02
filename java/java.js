@@ -269,6 +269,5 @@ function checkbox(){
     else{
         document.getElementById("negativo").style.display = "none"
         document.getElementById("labelnegativo").style.display = "none"
-    }
-        
+    }  
 }

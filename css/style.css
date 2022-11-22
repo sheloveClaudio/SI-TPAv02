@@ -5,9 +5,13 @@
 }
 
 /* NAV / HEAD */
-header{
-    background-color: var(--backgrounddark);
+#navbar{
+    background-color: #344a52;
 }
+
+#navbar-content{
+    margin-left: 100px;
+} 
 
 #nav_icon{
     font-size: 12px;
@@ -70,11 +74,14 @@ button:hover{
     text-align: center;
 }
 
+#column-texto{
+    text-align: left;
+}
+
 #column-calculadora{
     margin-top: 10px;
     margin-bottom: 15px;
 }
-
 
 #h-number{
     font-size: 20px;
@@ -105,4 +112,14 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance:textfield;
+}
+
+/* Down Container */
+
+#container-git{
+    text-align: center;
+}
+
+img{
+    border-radius: 50%;
 }
