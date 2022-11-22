@@ -134,3 +134,28 @@ input[type=number] {
     margin-top: 40px;
     margin-bottom: 20px;
 }
+
+.zoom{
+    transition: transform .2s;
+}
+
+.zoom:hover{
+    transform: scale(1.10);
+}
+
+i{
+    font-size: 30px;
+}
+
+#git-icon{
+    color: rgba(6, 5, 7, 0.89);
+}
+
+#git-icon:hover{
+    color: var(--branco);
+}
+
+
+
+
+

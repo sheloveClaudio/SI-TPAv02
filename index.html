@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 </head>
 
@@ -49,30 +58,19 @@
                     <p>
                         ➔ Calculadora online grátis que o permite o cálculo de <b>binários negativos</b> e a
                         <b>conversão de bases numéricas</b> tais como: <br>
-                        - <a
-                            href="http://marco.uminho.pt/~joao/Computacao2/node4.html#SECTION00220000000000000000"><b>Decimal</b></a><br>
-                        - <a href="http://marco.uminho.pt/~joao/Computacao2/node5.html#SECTION00230000000000000000"><b>Binária</b></a> <br>
-                        - <a href="https://pt.wikipedia.org/wiki/Sistema_octal"><b>Octal</b></a> <br>
-                        - <a href="http://marco.uminho.pt/~joao/Computacao2/node10.html#SECTION00240000000000000000"><b>Hexadecimal </b></a>
-                    </p>
-                    <p>
-                        ➔ É de <b><span style="color: red;">realçar</span></b> que o utilizador deverá <b><span
-                                style="color: red;">introduzir um valor com um máximo de oito bits</span></b>.
-                    </p>
-                    <p>
-
-                        ➔ <b>Sistema Decimal</b> - O sistema Decimal é o sistema mais utilizado pelos seres humanos.
-                        <br>
-
-                        ➔ <b>Sistema binário</b> - É o sistema mais utilizado por máquinas. O sistema binário utiliza os
-                        símbolos: 0, 1. <br>
-
-                        ➔ <b>Sistema octal</b> - É um sistema de numeração de base 8, ou seja, recorre a 8 símbolos
-                        (0,1,2,3,4,5,6,7). <br>
-
-                        ➔ <b>Sistema Hexadecimal</b> - É muito utilizado na programação de microprocessadores. <br>
-
-                    </p>
+                        -> <a data-toggle="modal" data-target="#ModalCentralizado"><b>Decimal</b></a>
+                        <-<br>
+                            -> <a data-toggle="modal" data-target="#ModalCentralizado2"><b>Binária</b></a>
+                            <- <br>
+                                -> <a data-toggle="modal" data-target="#ModalCentralizado3"><b>Octal</b></a>
+                                <- <br>
+                                    -> <a data-toggle="modal" data-target="#ModalCentralizado4"><b>Hexadecimal</b></a>
+                                    <- </p>
+                                        <p>
+                                            ➔ É de <b><span style="color: red;">realçar</span></b> que o utilizador
+                                            deverá <b><span style="color: red;">introduzir um valor com um máximo de
+                                                    oito bits</span></b>.
+                                        </p>
                 </div>
                 <div class="col-sm-7" id="column-calculadora">
                     <div class="container-fluid-sm" id="container-calculadora">
@@ -130,30 +128,137 @@
         </main>
     </div>
     <div class="container">
-    <div class="container-fluid" id="container-git">
-        <h4 style="color: var(--branco);"><b>Desenvolvedores</b></h4>
-        <div class="row">
-            <div class="col" id="col-cla">
-                <img src="img/tia-git.png" alt="imgGit" id="tia-git">
-                <br>
-                <label id="labelcrew"><b>Software Engeenering <br> Student</b></label>
-            </div>
-            <div class="col">
-                <img src="img/cla-git.png" alt="imgGit" id="cla-git">
-                <br>
-                <label id="labelcrew"><b>Software Engeenering <br> Student</b></label>
-            </div>
-            <div class="col">
-                <img src="img/gonc-git.png" alt="imgGit" id="gongas-git">
-                <br>
-                <label id="labelcrew"><b>Software Engeenering <br> Student</b></label>
-                <br>
+        <div class="container-fluid" id="container-git">
+            <h4 style="color: var(--branco);"><b>Desenvolvedores</b></h4>
+            <div class="row">
+                <div class="col zoom" id="col-cla">
+                    <img src="img/tia-git.png" alt="imgGit" id="tia-git">
+                    <br>
+                    <label id="labelcrew"><b>Software Engeenering <br> Student</b></label>
+                    <br>
+                    <a href="https://github.com/sheloveTiago" id="git-icon"><i class="bi bi-github"></i></a>
+                </div>
+                <div class="col zoom">
+                    <img src="img/cla-git.png" alt="imgGit" id="cla-git">
+                    <br>
+                    <label id="labelcrew"><b>Software Engeenering <br> Student</b></label>
+                    <br>
+                    <a href="https://github.com/sheloveClaudio" id="git-icon"><i
+                            class="bi bi-github icon-large"></i></a>
+                </div>
+                <div class="col zoom">
+                    <img src="img/gonc-git.png" alt="imgGit" id="gongas-git">
+                    <br>
+                    <label id="labelcrew"><b>Software Engeenering <br> Student</b></label>
+                    <br>
+                    <a href="https://github.com/sheloveGoncalo" id="git-icon"><i class="bi bi-github"></i></a>
+                </div>
             </div>
         </div>
     </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="ModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalCentralizado">Decimal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <a href="http://marco.uminho.pt/~joao/Computacao2/node4.html#SECTION00220000000000000000">O que é?</a>
+                    <p>
+                        ➔ <b>Sistema Decimal</b> - O sistema Decimal é o sistema mais utilizado pelos seres humanos,
+                        normalmente para indicar quantidades, e é constituído por dez algarismos: 0,1,2,3,4,5,6,7,8,9.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
     </div>
-
-
+    <!--Modal 2-->
+    <div class="modal fade" id="ModalCentralizado2" tabindex="-1" role="dialog"
+        aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalCentralizado">Binário</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <a href="http://marco.uminho.pt/~joao/Computacao2/node5.html#SECTION00230000000000000000">O que é?</a>
+                    <p>
+                        ➔ <b>Sistema binário</b> - É o sistema mais utilizado por máquinas. O sistema binário utiliza os
+                        símbolos: 0, 1, sendo cada símbolo designado por bit.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal 3-->
+    <div class="modal fade" id="ModalCentralizado3" tabindex="-1" role="dialog"
+        aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalCentralizado">Octal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <a href="https://pt.wikipedia.org/wiki/Sistema_octal">O que é?</a>
+                    <p>
+                        ➔ <b>Sistema octal</b> - É um sistema de numeração de base 8, ou seja, recorre a 8 símbolos
+                        (0,1,2,3,4,5,6,7) para a representação de um determinado valor. O sistema octal foi muito
+                        utilizado no mundo da computação, como uma alternativa mais compacta do sistema binário, na
+                        programação em linguagem de máquina. <br>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modal 4-->
+    <div class="modal fade" id="ModalCentralizado4" tabindex="-1" role="dialog"
+        aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="TituloModalCentralizado">Hexadecimal</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <a
+                        href="http://marco.uminho.pt/~joao/Computacao2/node10.html#SECTION00240000000000000000">O que é?</a>
+                    <p>
+                        ➔ <b>Sistema Hexadecimal</b> - É muito utilizado na programação de microprocessadores,
+                        especialmente nos equipamentos de estudo e sistemas de desenvolvimento. Utiliza os símbolos:
+                        0,1,2,3,4,5,6,7,8,9 do sistema decimal e as letras A,B,C,D,E,F. <br>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

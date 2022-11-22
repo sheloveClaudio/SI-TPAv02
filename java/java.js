@@ -271,3 +271,4 @@ function checkbox(){
         document.getElementById("labelnegativo").style.display = "none"
     }  
 }
+
