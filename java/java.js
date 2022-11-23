@@ -91,7 +91,7 @@ function convert_number() {
             if (conv_type_result == "decimal") {
                 if(document.getElementById("negativo").checked == true){
                     if(numero > 0){
-                        document.getElementById("conversion-msg").innerHTML = "<b>Não é binomial positivo!</b>";
+                        document.getElementById("conversion-msg").innerHTML = "<b>Não é binário negativo!</b>";
                         document.getElementById("inserted-number").value = "";
                     }
                     else{
@@ -102,7 +102,7 @@ function convert_number() {
                 } 
                 else{
                     if(numero < 0){
-                        document.getElementById("conversion-msg").innerHTML = "<b>Não é binomial negativo!</b>";
+                        document.getElementById("conversion-msg").innerHTML = "<b>Não é binário positivo!</b>";
                         document.getElementById("inserted-number").value = "";
                     }else{
                         numero_convertido.value = convertingfunc(numero,2,10);
@@ -214,7 +214,7 @@ function convert_number() {
 // Calculo Valores
 
 function convertingfunc(n, fromBase, toBase) {
-    return (parseInt(n.toString(), fromBase).toString(toBase));
+    return ((parseInt(n.toString(), fromBase).toString(toBase)).toUpperCase());
   }
 
 // Limpar texto 

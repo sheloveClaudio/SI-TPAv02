@@ -28,24 +28,12 @@
 
 <body>
 
-    <nav class="container-fluid navbar navbar-expand-lg navbar-dark" id="navbar">
-        <div class="container-fluid" id="navbar-content">
-            <div>
-                <div class="container text-center">
-                    <a class="navbar-brand" href="index.html"> <img id="nav_icon" src="img/ico/calculadora.png"
-                            height="60px" width="auto" alt="ico"> </a>
-                    <!--Quero por um icon-->
-                </div>
+    <nav class="container-fluid navbar navbar-expand-lg py-5 navbar-dark" id="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header" id="navbar-content">
+                <a class="navbar-brand text-center" href="index.html"> <img id="nav_icon" src="img/ico/calculadora.png"
+                        height="45px" width="auto" alt="ico"><h7><b>Calculadora</b></h7></a>
             </div>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav  mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Calculadora</a>
-                    </li>
-                </ul>
-            </div>
-
         </div>
     </nav>
 
@@ -57,20 +45,26 @@
                     <!-- coisas -->
                     <p>
                         ➔ Calculadora online grátis que o permite o cálculo de <b>binários negativos</b> e a
-                        <b>conversão de bases numéricas</b> tais como: <br>
-                        -> <a data-toggle="modal" data-target="#ModalCentralizado"><b>Decimal</b></a>
-                        <-<br>
-                            -> <a data-toggle="modal" data-target="#ModalCentralizado2"><b>Binária</b></a>
-                            <- <br>
-                                -> <a data-toggle="modal" data-target="#ModalCentralizado3"><b>Octal</b></a>
-                                <- <br>
-                                    -> <a data-toggle="modal" data-target="#ModalCentralizado4"><b>Hexadecimal</b></a>
-                                    <- </p>
-                                        <p>
-                                            ➔ É de <b><span style="color: red;">realçar</span></b> que o utilizador
-                                            deverá <b><span style="color: red;">introduzir um valor com um máximo de
-                                                    oito bits</span></b>.
-                                        </p>
+                        <b>conversão de bases numéricas</b> tais como:
+                    </p>
+                    <p id="text-center">
+                        ⇀ <a style="text-decoration: underline;" data-toggle="modal"
+                            data-target="#ModalCentralizado"><b>Decimal</b></a>
+                        ↽<br>
+                        ⇀ <a style="text-decoration: underline;" data-toggle="modal"
+                            data-target="#ModalCentralizado2"><b>Binária</b></a>
+                        ↽ <br>
+                        ⇀ <a style="text-decoration: underline;" data-toggle="modal"
+                            data-target="#ModalCentralizado3"><b>Octal</b></a>
+                        ↽ <br>
+                        ⇀ <a style="text-decoration: underline;" data-toggle="modal"
+                            data-target="#ModalCentralizado4"><b>Hexadecimal</b></a>
+                        ↽ </p>
+                    <p>
+                        ➔ É de <b><span style="color: red;">realçar</span></b> que o utilizador
+                        deverá <b><span style="color: red;">introduzir um valor com um máximo de
+                                oito bits</span></b>.
+                    </p>
                 </div>
                 <div class="col-sm-7" id="column-calculadora">
                     <div class="container-fluid-sm" id="container-calculadora">
@@ -129,7 +123,7 @@
     </div>
     <div class="container">
         <div class="container-fluid" id="container-git">
-            <h4 style="color: var(--branco);"><b>Desenvolvedores</b></h4>
+            <h3 style="color: rgba(0, 0, 0, 0.651);"><b>Desenvolvedores</b></h3>
             <div class="row">
                 <div class="col zoom" onClick="
                 parent.location='https://github.com/sheloveTiago'">
@@ -170,18 +164,21 @@
 
     <footer class="container-fluid" id="footer">
         <div class="row">
-        <ul class="nav justify-content-center border-bottom pb-2 mb-1">
-          <li class="nav-item"><a href="https://www.w3schools.com/html/default.asp" class="nav-link px-2 ">HTML</a></li>
-          <li class="nav-item"><a href="https://www.w3schools.com/css/" class="nav-link px-2 ">CSS</a></li>
-          <li class="nav-item"><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" class="nav-link px-2 ">JavaScript</a></li>
-          <li class="nav-item"><a href="https://getbootstrap.com" class="nav-link px-2 ">BootStrap</a></li>
-          <li class="nav-item"><a href="https://github.com" class="nav-link px-2 ">GitHut</a></li>
-        </ul>
-    </div>
-    <div class="row">
-        <p class="text-center" style="margin-bottom:5px; color: var(--branco);"><b>Made for college purposes!</b></p>
-    </div>
-      </footer>
+            <ul class="nav justify-content-center border-bottom pb-2 mb-1">
+                <li class="nav-item"><a href="https://www.w3schools.com/html/default.asp"
+                        class="nav-link px-2 ">HTML</a></li>
+                <li class="nav-item"><a href="https://www.w3schools.com/css/" class="nav-link px-2 ">CSS</a></li>
+                <li class="nav-item"><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript"
+                        class="nav-link px-2 ">JavaScript</a></li>
+                <li class="nav-item"><a href="https://getbootstrap.com" class="nav-link px-2 ">BootStrap</a></li>
+                <li class="nav-item"><a href="https://github.com" class="nav-link px-2 ">GitHut</a></li>
+            </ul>
+        </div>
+        <div class="row">
+            <p class="text-center" style="margin-bottom:5px; color: var(--branco);"><b>Made for college purposes!</b>
+            </p>
+        </div>
+    </footer>
 
 
 
@@ -198,16 +195,18 @@
                 </div>
                 <div class="modal-body">
                     <p style="color: var(--branco);">
-                        ➔ <span style="color: var(--textdark);"><b>Sistema Decimal</b></span> - O sistema Decimal é o sistema mais utilizado pelos seres humanos,
+                        ➔ <span style="color: var(--textdark);"><b>Sistema Decimal</b></span> - O sistema Decimal é o
+                        sistema mais utilizado pelos seres humanos,
                         normalmente para indicar quantidades, e é constituído por dez algarismos: 0,1,2,3,4,5,6,7,8,9.
                     </p>
-                    <p style="color: var(--branco);">➔ <span style="color: var(--textdark);"><b>Mais informação</b></span>
+                    <p style="color: var(--branco);">➔ <span style="color: var(--textdark);"><b>Mais
+                                informação</b></span>
                         <br>
                         <span style="margin-left: 141px;">⤷</span><a
                             href="http://marco.uminho.pt/~joao/Computacao2/node4.html#SECTION00220000000000000000"
                             style="margin-left: 5px;">Clicar</a>
                     </p>
-                    
+
                 </div>
                 <div class="modal-footer">
                 </div>
@@ -227,16 +226,18 @@
                 </div>
                 <div class="modal-body">
                     <p style="color: var(--branco);">
-                        ➔ <span style="color: var(--textdark);"><b>Sistema Binário</b></span> - É o sistema mais utilizado por máquinas. O sistema binário utiliza os
+                        ➔ <span style="color: var(--textdark);"><b>Sistema Binário</b></span> - É o sistema mais
+                        utilizado por máquinas. O sistema binário utiliza os
                         símbolos: 0, 1, sendo cada símbolo designado por bit.
                     </p>
-                    <p style="color: var(--branco);">➔ <span style="color: var(--textdark);"><b>Mais informação</b></span>
+                    <p style="color: var(--branco);">➔ <span style="color: var(--textdark);"><b>Mais
+                                informação</b></span>
                         <br>
                         <span style="margin-left: 141px;">⤷</span><a
                             href="http://marco.uminho.pt/~joao/Computacao2/node5.html#SECTION00230000000000000000"
                             style="margin-left: 5px;">Clicar</a>
                     </p>
-                    
+
                 </div>
                 <div class="modal-footer">
                 </div>
@@ -255,18 +256,20 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                     <p style="color: var(--branco);">
-                        ➔ <span style="color: var(--textdark);"><b>Sistema Octal</b></span> - É um sistema de numeração de base 8, ou seja, recorre a 8 símbolos
+                    <p style="color: var(--branco);">
+                        ➔ <span style="color: var(--textdark);"><b>Sistema Octal</b></span> - É um sistema de numeração
+                        de base 8, ou seja, recorre a 8 símbolos
                         (0,1,2,3,4,5,6,7) para a representação de um determinado valor. O sistema octal foi muito
                         utilizado no mundo da computação, como uma alternativa mais compacta do sistema binário, na
                         programação em linguagem de máquina. <br>
                     </p>
-                    <p style="color: var(--branco);">➔ <span style="color: var(--textdark);"><b>Mais informação</b></span>
+                    <p style="color: var(--branco);">➔ <span style="color: var(--textdark);"><b>Mais
+                                informação</b></span>
                         <br>
                         <span style="margin-left: 141px;">⤷</span><a href="https://pt.wikipedia.org/wiki/Sistema_octal"
                             style="margin-left: 5px;">Clicar</a>
                     </p>
-                   
+
                 </div>
                 <div class="modal-footer">
                 </div>
@@ -286,11 +289,13 @@
                 </div>
                 <div class="modal-body">
                     <p style="color: var(--branco);">
-                        ➔ <span style="color: var(--textdark);"><b>Sistema Hexadecimal</b></span> - É muito utilizado na programação de microprocessadores,
+                        ➔ <span style="color: var(--textdark);"><b>Sistema Hexadecimal</b></span> - É muito utilizado na
+                        programação de microprocessadores,
                         especialmente nos equipamentos de estudo e sistemas de desenvolvimento. Utiliza os símbolos:
                         0,1,2,3,4,5,6,7,8,9 do sistema decimal e as letras A,B,C,D,E,F. <br>
                     </p>
-                    <p style="color: var(--branco);">➔ <span style="color: var(--textdark);"><b>Mais informação</b></span>
+                    <p style="color: var(--branco);">➔ <span style="color: var(--textdark);"><b>Mais
+                                informação</b></span>
                         <br>
                         <span style="margin-left: 141px;">⤷</span><a
                             href="http://marco.uminho.pt/~joao/Computacao2/node10.html#SECTION00240000000000000000"
