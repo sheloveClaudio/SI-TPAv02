@@ -180,11 +180,17 @@ function convert_number() {
 
 
     else if (conv_type == "hexa") {
-        if (convertingfunc(document.getElementById("inserted-number").value,16,10) > 255 ) {
+        if (/[G-Zg-z]/.test(document.getElementById("inserted-number").value)) {
+            document.getElementById("inserted-number").value = "";
+            document.getElementById("received-value").value = "";
+            document.getElementById("conversion-msg").innerHTML = "<b>O número não é valido!</b>";
+        }
+        else if (convertingfunc(document.getElementById("inserted-number").value,16,10) > 255 ) {
             document.getElementById("inserted-number").value = "";
             document.getElementById("received-value").value = "";
             document.getElementById("conversion-msg").innerHTML = "<b>O número contém mais de 8 bits!</b>";
         }
+        
         else {
             // Baixo decimal
             if (conv_type_result == "decimal") {
@@ -236,7 +242,8 @@ function funcaodinamica() {
     var conv_type_result = document.getElementById("received-number-type").value;
 
     if (conv_type == "hexa") {
-        document.getElementById("inserted-number").type = "text";
+        document.getElementById("inserted-number").type="text";
+        document.getElementById("inserted-number").pattern="[a-f]";
     } else document.getElementById("inserted-number").type = "number";
 }
 
