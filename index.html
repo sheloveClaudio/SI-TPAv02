@@ -131,23 +131,32 @@
         <div class="container-fluid" id="container-git">
             <h4 style="color: var(--branco);"><b>Desenvolvedores</b></h4>
             <div class="row">
-                <div class="col zoom" id="col-cla">
+                <div class="col zoom" onClick="
+                parent.location='https://github.com/sheloveTiago'">
                     <img src="img/tia-git.png" alt="imgGit" id="tia-git">
+                    <br>
+                    <label id="labelnomes">Tiago Vaz</label>
                     <br>
                     <label id="labelcrew"><b>Software Engeenering <br> Student</b></label>
                     <br>
                     <a href="https://github.com/sheloveTiago" id="git-icon"><i class="bi bi-github"></i></a>
                 </div>
-                <div class="col zoom">
+                <div class="col zoom" onClick="
+                parent.location='https://github.com/sheloveClaudio'">
                     <img src="img/cla-git.png" alt="imgGit" id="cla-git">
+                    <br>
+                    <label id="labelnomes">Cláudio Ramos</label>
                     <br>
                     <label id="labelcrew"><b>Software Engeenering <br> Student</b></label>
                     <br>
                     <a href="https://github.com/sheloveClaudio" id="git-icon"><i
                             class="bi bi-github icon-large"></i></a>
                 </div>
-                <div class="col zoom">
+                <div class="col zoom" onClick="
+                parent.location='https://github.com/sheloveGoncalo'">
                     <img src="img/gonc-git.png" alt="imgGit" id="gongas-git">
+                    <br>
+                    <label id="labelnomes">Gonçalo Cunha</label>
                     <br>
                     <label id="labelcrew"><b>Software Engeenering <br> Student</b></label>
                     <br>
@@ -156,6 +165,23 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+
+    <footer class="container-fluid" id="footer">
+        <div class="row">
+        <ul class="nav justify-content-center border-bottom pb-2 mb-1">
+          <li class="nav-item"><a href="https://www.w3schools.com/html/default.asp" class="nav-link px-2 ">HTML</a></li>
+          <li class="nav-item"><a href="https://www.w3schools.com/css/" class="nav-link px-2 ">CSS</a></li>
+          <li class="nav-item"><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" class="nav-link px-2 ">JavaScript</a></li>
+          <li class="nav-item"><a href="https://getbootstrap.com" class="nav-link px-2 ">BootStrap</a></li>
+          <li class="nav-item"><a href="https://github.com" class="nav-link px-2 ">GitHut</a></li>
+        </ul>
+    </div>
+    <div class="row">
+        <p class="text-center" style="margin-bottom:5px; color: var(--branco);"><b>Made for college purposes!</b></p>
+    </div>
+      </footer>
 
 
 
@@ -166,19 +192,24 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="TituloModalCentralizado">Decimal</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" id="btn-fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <a href="http://marco.uminho.pt/~joao/Computacao2/node4.html#SECTION00220000000000000000">O que é?</a>
-                    <p>
-                        ➔ <b>Sistema Decimal</b> - O sistema Decimal é o sistema mais utilizado pelos seres humanos,
+                    <p style="color: var(--branco);">
+                        ➔ <span style="color: var(--textdark);"><b>Sistema Decimal</b></span> - O sistema Decimal é o sistema mais utilizado pelos seres humanos,
                         normalmente para indicar quantidades, e é constituído por dez algarismos: 0,1,2,3,4,5,6,7,8,9.
                     </p>
+                    <p style="color: var(--branco);">➔ <span style="color: var(--textdark);"><b>Mais informação</b></span>
+                        <br>
+                        <span style="margin-left: 141px;">⤷</span><a
+                            href="http://marco.uminho.pt/~joao/Computacao2/node4.html#SECTION00220000000000000000"
+                            style="margin-left: 5px;">Clicar</a>
+                    </p>
+                    
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
@@ -188,21 +219,26 @@
         aria-labelledby="TituloModalCentralizado" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header center">
                     <h5 class="modal-title" id="TituloModalCentralizado">Binário</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" id="btn-fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <a href="http://marco.uminho.pt/~joao/Computacao2/node5.html#SECTION00230000000000000000">O que é?</a>
-                    <p>
-                        ➔ <b>Sistema binário</b> - É o sistema mais utilizado por máquinas. O sistema binário utiliza os
+                    <p style="color: var(--branco);">
+                        ➔ <span style="color: var(--textdark);"><b>Sistema Binário</b></span> - É o sistema mais utilizado por máquinas. O sistema binário utiliza os
                         símbolos: 0, 1, sendo cada símbolo designado por bit.
                     </p>
+                    <p style="color: var(--branco);">➔ <span style="color: var(--textdark);"><b>Mais informação</b></span>
+                        <br>
+                        <span style="margin-left: 141px;">⤷</span><a
+                            href="http://marco.uminho.pt/~joao/Computacao2/node5.html#SECTION00230000000000000000"
+                            style="margin-left: 5px;">Clicar</a>
+                    </p>
+                    
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
@@ -214,21 +250,25 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="TituloModalCentralizado">Octal</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" id="btn-fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <a href="https://pt.wikipedia.org/wiki/Sistema_octal">O que é?</a>
-                    <p>
-                        ➔ <b>Sistema octal</b> - É um sistema de numeração de base 8, ou seja, recorre a 8 símbolos
+                     <p style="color: var(--branco);">
+                        ➔ <span style="color: var(--textdark);"><b>Sistema Octal</b></span> - É um sistema de numeração de base 8, ou seja, recorre a 8 símbolos
                         (0,1,2,3,4,5,6,7) para a representação de um determinado valor. O sistema octal foi muito
                         utilizado no mundo da computação, como uma alternativa mais compacta do sistema binário, na
                         programação em linguagem de máquina. <br>
                     </p>
+                    <p style="color: var(--branco);">➔ <span style="color: var(--textdark);"><b>Mais informação</b></span>
+                        <br>
+                        <span style="margin-left: 141px;">⤷</span><a href="https://pt.wikipedia.org/wiki/Sistema_octal"
+                            style="margin-left: 5px;">Clicar</a>
+                    </p>
+                   
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
@@ -240,21 +280,24 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="TituloModalCentralizado">Hexadecimal</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar" id="btn-fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <a
-                        href="http://marco.uminho.pt/~joao/Computacao2/node10.html#SECTION00240000000000000000">O que é?</a>
-                    <p>
-                        ➔ <b>Sistema Hexadecimal</b> - É muito utilizado na programação de microprocessadores,
+                    <p style="color: var(--branco);">
+                        ➔ <span style="color: var(--textdark);"><b>Sistema Hexadecimal</b></span> - É muito utilizado na programação de microprocessadores,
                         especialmente nos equipamentos de estudo e sistemas de desenvolvimento. Utiliza os símbolos:
                         0,1,2,3,4,5,6,7,8,9 do sistema decimal e as letras A,B,C,D,E,F. <br>
                     </p>
+                    <p style="color: var(--branco);">➔ <span style="color: var(--textdark);"><b>Mais informação</b></span>
+                        <br>
+                        <span style="margin-left: 141px;">⤷</span><a
+                            href="http://marco.uminho.pt/~joao/Computacao2/node10.html#SECTION00240000000000000000"
+                            style="margin-left: 5px;">Clicar</a>
+                    </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
